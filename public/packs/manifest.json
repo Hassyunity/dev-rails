@@ -1,0 +1,34 @@
+{
+  "application.js": "/packs/js/application-f826770d917d8a37c1d8.js",
+  "application.js.map": "/packs/js/application-f826770d917d8a37c1d8.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-f826770d917d8a37c1d8.js"
+      ],
+      "js.map": [
+        "/packs/js/application-f826770d917d8a37c1d8.js.map"
+      ]
+    },
+    "hello_angular": {
+      "js": [
+        "/packs/js/hello_angular-a3aabc247a0f41db8447.js"
+      ],
+      "js.map": [
+        "/packs/js/hello_angular-a3aabc247a0f41db8447.js.map"
+      ]
+    },
+    "hello_typescript": {
+      "js": [
+        "/packs/js/hello_typescript-62a7ba3025e0004166d6.js"
+      ],
+      "js.map": [
+        "/packs/js/hello_typescript-62a7ba3025e0004166d6.js.map"
+      ]
+    }
+  },
+  "hello_angular.js": "/packs/js/hello_angular-a3aabc247a0f41db8447.js",
+  "hello_angular.js.map": "/packs/js/hello_angular-a3aabc247a0f41db8447.js.map",
+  "hello_typescript.js": "/packs/js/hello_typescript-62a7ba3025e0004166d6.js",
+  "hello_typescript.js.map": "/packs/js/hello_typescript-62a7ba3025e0004166d6.js.map"
+}
