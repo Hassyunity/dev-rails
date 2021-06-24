@@ -26360,3 +26360,128 @@ Migrating to CreateBooks (20210617092913)
   [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles" for ::1 at 2021-06-24 09:43:28 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 12877)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: ed95d8bb39be631d7ba1
+Version: webpack 4.46.0
+Time: 660ms
+Built at: 24/06/2021 09:43:30
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-043caaf4281fc836bf01.js  4.26 KiB       application  [emitted] [immutable]  application
+     js/application-043caaf4281fc836bf01.js.map  3.53 KiB       application  [emitted] [dev]        application
+       js/hello_angular-488256d7c70f81446b07.js   172 KiB     hello_angular  [emitted] [immutable]  hello_angular
+   js/hello_angular-488256d7c70f81446b07.js.map   121 KiB     hello_angular  [emitted] [dev]        hello_angular
+    js/hello_typescript-62a7ba3025e0004166d6.js  4.12 KiB  hello_typescript  [emitted] [immutable]  hello_typescript
+js/hello_typescript-62a7ba3025e0004166d6.js.map  3.81 KiB  hello_typescript  [emitted] [dev]        hello_typescript
+                                  manifest.json  1.07 KiB                    [emitted]              
+Entrypoint application = js/application-043caaf4281fc836bf01.js js/application-043caaf4281fc836bf01.js.map
+Entrypoint hello_angular = js/hello_angular-488256d7c70f81446b07.js js/hello_angular-488256d7c70f81446b07.js.map
+Entrypoint hello_typescript = js/hello_typescript-62a7ba3025e0004166d6.js js/hello_typescript-62a7ba3025e0004166d6.js.map
+[./app/javascript/hello_angular/app/app.module.ts] 2.8 KiB {hello_angular} [built] [failed] [1 error]
+[./app/javascript/hello_angular/index.ts] 265 bytes {hello_angular} [built]
+[./app/javascript/hello_angular/polyfills.ts] 2.07 KiB {hello_angular} [built]
+[./app/javascript/packs/application.js] 368 bytes {application} [built] [failed] [1 error]
+[./app/javascript/packs/hello_angular.js] 203 bytes {hello_angular} [built]
+[./app/javascript/packs/hello_typescript.ts] 200 bytes {hello_typescript} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {hello_angular} [built]
+    + 110 hidden modules
+
+ERROR in ./app/javascript/hello_angular/app/app.module.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/dev-admin/Documents/Study/testgit/app/javascript/hello_angular/app/app.module.ts: Support for the experimental syntax 'decorators-legacy' isn't currently enabled (6:1):
+
+  4 | import { AppComponent } from './app.component';
+  5 |
+> 6 | @NgModule({
+    | ^
+  7 |   declarations: [
+  8 |     AppComponent
+  9 |   ],
+    at Object._raise (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:816:17)
+    at Object.raiseWithData (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:809:17)
+    at Object.expectOnePlugin (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:9911:18)
+    at Object.parseDecorator (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:12718:10)
+    at Object.parseDecorators (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:12700:30)
+    at Object.parseStatement (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:12533:12)
+    at Object.parseBlockOrModuleBlockBody (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:13125:25)
+    at Object.parseBlockBody (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:13116:10)
+    at Object.parseProgram (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:12459:10)
+    at Object.parseTopLevel (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:12450:25)
+    at Object.parse (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:14177:10)
+    at Object.parse (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:7959:18)
+    at parse (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/parser/lib/index.js:14229:38)
+    at parser (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/core/lib/parser/index.js:52:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/core/lib/transformation/normalize-file.js:82:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/core/lib/transformation/index.js:29:50)
+    at run.next (<anonymous>)
+    at Function.transform (/home/dev-admin/Documents/Study/testgit/node_modules/@babel/core/lib/transform.js:25:41)
+    at transform.next (<anonymous>)
+    at step (/home/dev-admin/Documents/Study/testgit/node_modules/gensync/index.js:261:32)
+    at gen.next (/home/dev-admin/Documents/Study/testgit/node_modules/gensync/index.js:273:13)
+    at async.call.value (/home/dev-admin/Documents/Study/testgit/node_modules/gensync/index.js:223:11)
+ @ ./app/javascript/hello_angular/index.ts 3:0-45 5:43-52
+ @ ./app/javascript/packs/hello_angular.js
+
+ERROR in ./app/javascript/hello_angular/index.ts
+Module not found: Error: Can't resolve '@angular/platform-browser-dynamic' in '/home/dev-admin/Documents/Study/testgit/app/javascript/hello_angular'
+ @ ./app/javascript/hello_angular/index.ts 2:0-75 5:2-24
+ @ ./app/javascript/packs/hello_angular.js
+
+ERROR in ./app/javascript/hello_angular/polyfills.ts
+Module not found: Error: Can't resolve 'zone.js/dist/zone' in '/home/dev-admin/Documents/Study/testgit/app/javascript/hello_angular'
+ @ ./app/javascript/hello_angular/polyfills.ts 33:0-27
+ @ ./app/javascript/hello_angular/index.ts
+ @ ./app/javascript/packs/hello_angular.js
+
+ERROR in ./app/javascript/packs/application.js 76:13
+Module parse failed: Unexpected token (76:13)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+|     key: "render",
+|     value: function render() {
+>       return <div>
+|           Secondes : {this.state.seconds}
+|         </div>;
+
+
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+  Rendered layout layouts/application.html.erb (Duration: 2014.6ms | Allocations: 22043)
+Completed 200 OK in 2037ms (Views: 2022.9ms | ActiveRecord: 0.4ms | Allocations: 27015)
+
+
