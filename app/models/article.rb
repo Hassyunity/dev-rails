@@ -36,4 +36,4 @@ class Article < ApplicationRecord
 
   # for the book
  
-end
+end 

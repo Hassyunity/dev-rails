@@ -26485,3 +26485,29 @@ to the "plugins" section of your Babel config.
 Completed 200 OK in 2037ms (Views: 2022.9ms | ActiveRecord: 0.4ms | Allocations: 27015)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-25 08:37:05 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 13360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 19603)
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 0.7ms | Allocations: 24239)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-25 08:37:07 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 3883)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 7068)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 7480)
+
+
