@@ -26784,3 +26784,164 @@ Processing by ArticlesController#new as HTML
 Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 4525)
 
 
+Started GET "/articles/new" for ::1 at 2021-07-12 17:02:45 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 4.8ms | Allocations: 5185)
+  Rendered articles/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 5711)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 15.9ms | Allocations: 16045)
+Completed 200 OK in 35ms (Views: 17.5ms | ActiveRecord: 0.9ms | Allocations: 24247)
+
+
+Started GET "/articles/new" for ::1 at 2021-07-12 17:02:47 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 0.9ms | Allocations: 732)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 831)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 3.7ms | Allocations: 4128)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 4542)
+
+
+Started GET "/articles/new" for ::1 at 2021-07-12 17:02:48 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 0.8ms | Allocations: 726)
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 825)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 3.1ms | Allocations: 4122)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 4535)
+
+
+Started GET "/articles/14" for ::1 at 2021-07-13 16:18:07 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 14]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered comments/_form.html.erb (Duration: 17.3ms | Allocations: 8775)
+  Rendered articles/show.html.erb within layouts/application (Duration: 32.9ms | Allocations: 14029)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 56.6ms | Allocations: 24351)
+Completed 200 OK in 80ms (Views: 59.0ms | ActiveRecord: 1.1ms | Allocations: 33564)
+
+
+Started GET "/articles/" for ::1 at 2021-07-13 16:18:14 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:17
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 5359)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 7.2ms | Allocations: 8559)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 9099)
+
+
+Started GET "/articles/new" for ::1 at 2021-07-13 16:18:30 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.7ms | Allocations: 1190)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1526)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 4.8ms | Allocations: 4822)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5408)
+
+
+Started GET "/articles/" for ::1 at 2021-07-13 16:18:36 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:17
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3983)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 7.5ms | Allocations: 7183)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 7593)
+
+
+Started GET "/articles/14" for ::1 at 2021-07-13 16:18:40 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 14]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 10)
+  Rendered comments/_form.html.erb (Duration: 1.0ms | Allocations: 707)
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1711)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 5.2ms | Allocations: 5008)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 5972)
+
+
+Started POST "/articles/14/comments" for ::1 at 2021-07-13 16:18:45 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"hassy", "body"=>""}, "x"=>"56", "y"=>"12", "article_id"=>"14"}
+Filter chain halted as #<Proc:0x00007fd570501f98@/usr/share/rvm/gems/ruby-2.6.5/gems/actionpack-6.1.3.2/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 381)
+
+
+Started POST "/articles/14/comments" for ::1 at 2021-07-13 16:18:52 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"hassy", "body"=>""}, "x"=>"56", "y"=>"12", "article_id"=>"14"}
+Filter chain halted as #<Proc:0x00007fd570501f98@/usr/share/rvm/gems/ruby-2.6.5/gems/actionpack-6.1.3.2/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 284)
+
+
+Started GET "/articles/" for ::1 at 2021-07-13 16:40:09 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:17
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:17
+  Rendered articles/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 9199)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 23.7ms | Allocations: 15382)
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.5ms | Allocations: 17512)
+
+
+Started GET "/search?query=hyh&city=Tana&commit=Search" for ::1 at 2021-07-13 16:40:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/search"):
+  
+Started GET "/articles/" for ::1 at 2021-07-13 16:40:31 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:17
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 4135)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 4.8ms | Allocations: 7457)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 7949)
+
+
+Started GET "/articles/new" for ::1 at 2021-07-13 16:40:34 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.1ms | Allocations: 1102)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 3.9ms | Allocations: 4734)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 5325)
+
+
