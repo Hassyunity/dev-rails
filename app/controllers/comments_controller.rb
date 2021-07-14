@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
-
-    http_basic_authenticate_with name: "name", password: "1234", except: [:index, :show]
+    http_basic_authenticate_with name: "name", password: "1234", except: [:index, :show
     
-    def create
+        def create
         @article = Article.find(params[:article_id])
         @comment = @article.comments.create(comment_params)
         redirect_to article_path(@article)
