@@ -1,23 +1,26 @@
--# <h1>New Article</h1>
+-# <center><h1>New Article</h1>
+
+
+-# <%= render "form", article: @article %>
+ 
+-# <html>________________________________________________________________________________________________________________________________________________________________<br>
+%br 
 %h1
 test the extension haml
 #sidebar
   %ul.main
     %li.active
-      %a{"href" => "accueil.html"}
+      %a{"href" => "../articles"}
         Accueil
     %li
-      %a{"href" => "nouvelles.html"}
-        Nouvelles
-    %li.disabled
-      %a Membres
-
--# <%= render "form", article: @article %>
- 
--# <html>
--#   %html
--#   %head
--#     %title 
--#       Sativaware : Introduction to HAML
--#   %body
--#     Haml is a markup language  ...
+      %a{"href" => "new"}
+        Nouvelles 
+    %li.desable
+      %a{"href" => "new"}
+      Articles
+  %html
+  %head
+    %title 
+      
+  %body
+    Haml is a markup language  ...
