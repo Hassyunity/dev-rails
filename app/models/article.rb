@@ -2,6 +2,7 @@ class GoodnessValidator < ActiveModel::Validator
   def validate(record)
     if record.title == "God"
       record.errors.add :base, "gods is not for sale"
+      [1, 2, 3].each { |n| puts "Current number is: #{n}" }
     end
   end
 end

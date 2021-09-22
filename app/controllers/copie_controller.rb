@@ -1,0 +1,3 @@
+class CopieController < ApplicationController
+    
+end
