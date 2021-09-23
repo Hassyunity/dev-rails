@@ -15,12 +15,8 @@ test the extension haml
     %li
       %a{"href" => "new"}
         Nouvelles 
-    %li.desable
+    %li.active
       %a{"href" => "new"}
       Articles
-  %html
-  %head
-    %title 
-      
-  %body
-    Haml is a markup language  ...
+  %h1 new article
+= render "form", article: @article

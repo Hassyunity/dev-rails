@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    http_basic_authenticate_with name: "name", password: "1234", except: [:index, :show]
+    http_basic_authenticate_with name: "comment", password: "1234", except: [:index, :show]
 
     before_action :set_post, only: [:create, :destroy]
     
