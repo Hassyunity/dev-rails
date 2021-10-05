@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  get 'home/private'
   root "articles#index"
 
   resources :articles do

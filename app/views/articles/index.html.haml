@@ -1,0 +1,27 @@
+%head
+  = yield :head
+%body
+  = yield
+  %h1 Training project
+  %h1 Listing actualitie
+  %center
+    %table
+      %thead
+        %tr
+          %th Title
+          %th Content
+          %th{:colspan => "3"}
+      %tbody
+        - @articles.each do |article|
+          %tr
+            %td= article.title
+            %td= article.body
+            %td= link_to "Show", article
+            %td= link_to "Edit", edit_article_path(article)
+            %td= link_to "Destroy", article, method: :delete, data: { confirm: "Are you sure to delete it?" }
+  %br/
+  = link_to "New_article", new_article_path
+  %label{:for => "query"} Search for:
+  %input#query{:name => "query", :type => "text"}/
+  %select#city{:name => "city"}
+    %input{"data-disable-with" => "Search", :name => "commit", :type => "submit", :value => "Search"}/

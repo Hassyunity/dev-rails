@@ -35516,3 +35516,1056 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.3ms | Allocations: 5115)
 
 
+Started GET "/" for 127.0.0.1 at 2021-09-23 09:50:16 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 5934)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 14.9ms | Allocations: 18516)
+Completed 200 OK in 25ms (Views: 15.6ms | ActiveRecord: 0.4ms | Allocations: 23031)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2021-09-23 09:50:59 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 2.0ms | Allocations: 1187)
+Started GET "/articles/3" for 127.0.0.1 at 2021-09-23 09:50:59 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 0.6ms | Allocations: 442)
+  Rendered comments/_form.html.erb (Duration: 17.8ms | Allocations: 11403)
+  Rendered articles/show.html.erb within layouts/application (Duration: 38.0ms | Allocations: 23082)
+  Rendered comments/_form.html.erb (Duration: 8.7ms | Allocations: 6120)
+  Rendered articles/show.html.erb within layouts/application (Duration: 11.2ms | Allocations: 7800)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 47.8ms | Allocations: 29887)
+Completed 200 OK in 61ms (Views: 48.2ms | ActiveRecord: 0.6ms | Allocations: 34122)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 20.1ms | Allocations: 14174)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.4ms | Allocations: 15952)
+
+
+Started DELETE "/articles/10" for 127.0.0.1 at 2021-09-23 09:51:09 +0300
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 10]]
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+  [1m[36mComment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+  [1m[36mArticle Destroy (0.1ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 26ms (ActiveRecord: 13.5ms | Allocations: 7005)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-23 09:51:09 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 4.2ms | Allocations: 4632)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 5033)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-23 09:51:13 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1253)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 3.8ms | Allocations: 4613)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5013)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-23 10:10:40 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 5747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 12.0ms | Allocations: 16615)
+Completed 200 OK in 22ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 21193)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-23 10:11:49 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1627)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 12.2ms | Allocations: 7806)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.1ms | Allocations: 8694)
+
+
+Started GET "/search?query=&commit=Search" for 127.0.0.1 at 2021-09-23 10:11:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/search"):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-23 10:11:58 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1372)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 10.8ms | Allocations: 4872)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 5374)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-23 10:26:08 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 5683)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 24.6ms | Allocations: 17319)
+Completed 200 OK in 35ms (Views: 25.5ms | ActiveRecord: 0.4ms | Allocations: 22408)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2021-09-23 10:26:11 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/new.html.haml within layouts/application
+  Rendered articles/_form.html.erb (Duration: 5.2ms | Allocations: 5760)
+  Rendered articles/new.html.haml within layouts/application (Duration: 7.5ms | Allocations: 9678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 10.1ms | Allocations: 12936)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 13499)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2021-09-23 10:26:16 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 2.3ms | Allocations: 911)
+  Rendered comments/_form.html.erb (Duration: 2.9ms | Allocations: 1156)
+  Rendered articles/show.html.erb within layouts/application (Duration: 19.8ms | Allocations: 11946)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 27.3ms | Allocations: 15209)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.7ms | Allocations: 16748)
+
+
+Started DELETE "/articles/3/comments/41" for 127.0.0.1 at 2021-09-23 10:26:28 +0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article_id"=>"3", "id"=>"41"}
+Filter chain halted as #<Proc:0x00007f9150a9d290@/usr/share/rvm/gems/ruby-2.6.5/gems/actionpack-6.1.3.2/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started DELETE "/articles/3/comments/41" for 127.0.0.1 at 2021-09-23 10:26:38 +0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article_id"=>"3", "id"=>"41"}
+Filter chain halted as #<Proc:0x00007f9150a9d290@/usr/share/rvm/gems/ruby-2.6.5/gems/actionpack-6.1.3.2/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 261)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2021-09-23 10:26:40 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 0.5ms | Allocations: 442)
+  Rendered comments/_form.html.erb (Duration: 1.8ms | Allocations: 706)
+  Rendered articles/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2249)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 9.9ms | Allocations: 5610)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 6575)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-23 10:26:42 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1254)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 6.3ms | Allocations: 4614)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 5020)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-23 10:59:58 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:35
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1998)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 5.0ms | Allocations: 5359)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 5760)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-23 11:00:00 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 4.1ms | Allocations: 4620)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 5021)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-30 11:49:23 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 5607)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 25.5ms | Allocations: 16561)
+Completed 200 OK in 39ms (Views: 27.0ms | ActiveRecord: 0.7ms | Allocations: 21191)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2021-09-30 11:49:29 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 2.1ms | Allocations: 908)
+  Rendered comments/_form.html.erb (Duration: 9.1ms | Allocations: 4858)
+  Rendered articles/show.html.erb within layouts/application (Duration: 33.2ms | Allocations: 14926)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 37.8ms | Allocations: 18189)
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 0.9ms | Allocations: 19731)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2021-09-30 11:49:34 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 5]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.5ms | Allocations: 166)
+  Rendered comments/_form.html.erb (Duration: 1.4ms | Allocations: 706)
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1926)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 8.0ms | Allocations: 5287)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 6258)
+
+
+Started GET "/search?query=&commit=Search" for 127.0.0.1 at 2021-09-30 14:17:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/search"):
+  
+  [1m[35m (667.5ms)[0m  [1m[35mCREATE DATABASE "dev_rails_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "dev_rails_development" ENCODING = 'utf8'[0m
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:04:40 +0300
+  [1m[35m (55.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (22.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 7 pending migrations:
+
+20210610084919_create_articles.rb
+20210614103255_drop_comments.rb
+20210614103429_create_comments.rb
+20210615091703_create_products.rb
+20210615091850_add_details_to_products.rb
+20210617092913_create_books.rb
+20210930115743_devise_create_users.rb
+
+
+):
+  
+activerecord (6.1.3.2) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3.2) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3.2) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.3.2) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+webpacker (5.4.0) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7867416076311703905)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20210610084919)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (117.1ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210610084919"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropComments (20210614103255)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7867416076311703905)[0m
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:05:21 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 6 pending migrations:
+
+20210614103255_drop_comments.rb
+20210614103429_create_comments.rb
+20210615091703_create_products.rb
+20210615091850_add_details_to_products.rb
+20210617092913_create_books.rb
+20210930115743_devise_create_users.rb
+
+
+):
+  
+activerecord (6.1.3.2) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3.2) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3.2) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.3.2) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+webpacker (5.4.0) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2021-09-30 15:05:23 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7867416076311703905)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropComments (20210614103255)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7867416076311703905)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::UndefinedTable: ERROR:  table "comments" does not exist
+):
+  
+rack-mini-profiler (2.3.2) lib/patches/db/pg.rb:113:in `exec'
+rack-mini-profiler (2.3.2) lib/patches/db/pg.rb:113:in `async_exec'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/postgresql/database_statements.rb:47:in `block (2 levels) in execute'
+activesupport (6.1.3.2) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (6.1.3.2) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (6.1.3.2) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/postgresql/database_statements.rb:46:in `block in execute'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract_adapter.rb:696:in `block (2 levels) in log'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract_adapter.rb:695:in `block in log'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract_adapter.rb:687:in `log'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/postgresql/database_statements.rb:45:in `execute'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:59:in `drop_table'
+activerecord (6.1.3.2) lib/active_record/migration.rb:929:in `block in method_missing'
+activerecord (6.1.3.2) lib/active_record/migration.rb:897:in `block in say_with_time'
+/usr/share/rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.1.3.2) lib/active_record/migration.rb:897:in `say_with_time'
+activerecord (6.1.3.2) lib/active_record/migration.rb:918:in `method_missing'
+db/migrate/20210614103255_drop_comments.rb:3:in `up'
+activerecord (6.1.3.2) lib/active_record/migration.rb:870:in `public_send'
+activerecord (6.1.3.2) lib/active_record/migration.rb:870:in `exec_migration'
+activerecord (6.1.3.2) lib/active_record/migration.rb:851:in `block (2 levels) in migrate'
+/usr/share/rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.1.3.2) lib/active_record/migration.rb:850:in `block in migrate'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:462:in `with_connection'
+activerecord (6.1.3.2) lib/active_record/migration.rb:849:in `migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1037:in `migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1329:in `block in execute_migration_in_transaction'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1380:in `block in ddl_transaction'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `block in transaction'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/transaction.rb:310:in `block in within_new_transaction'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/transaction.rb:308:in `within_new_transaction'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `transaction'
+activerecord (6.1.3.2) lib/active_record/transactions.rb:209:in `transaction'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1380:in `ddl_transaction'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1328:in `execute_migration_in_transaction'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1302:in `each'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1302:in `migrate_without_lock'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1251:in `block in migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1401:in `block in with_advisory_lock'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1416:in `block in with_advisory_lock_connection'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:462:in `with_connection'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1416:in `with_advisory_lock_connection'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1397:in `with_advisory_lock'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1251:in `migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1086:in `up'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1061:in `migrate'
+activerecord (6.1.3.2) lib/active_record/tasks/database_tasks.rb:237:in `migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:137:in `block in <class:PendingMigrationError>'
+activesupport (6.1.3.2) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+webpacker (5.4.0) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20210930115743)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210930115743"]]
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/rails/actions" for 127.0.0.1 at 2021-09-30 15:07:08 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7867416076311703905)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropComments (20210614103255)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7867416076311703905)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::UndefinedTable: ERROR:  table "comments" does not exist
+):
+  
+rack-mini-profiler (2.3.2) lib/patches/db/pg.rb:113:in `exec'
+rack-mini-profiler (2.3.2) lib/patches/db/pg.rb:113:in `async_exec'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/postgresql/database_statements.rb:47:in `block (2 levels) in execute'
+activesupport (6.1.3.2) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (6.1.3.2) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (6.1.3.2) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/postgresql/database_statements.rb:46:in `block in execute'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract_adapter.rb:696:in `block (2 levels) in log'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract_adapter.rb:695:in `block in log'
+activesupport (6.1.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract_adapter.rb:687:in `log'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/postgresql/database_statements.rb:45:in `execute'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:59:in `drop_table'
+activerecord (6.1.3.2) lib/active_record/migration.rb:929:in `block in method_missing'
+activerecord (6.1.3.2) lib/active_record/migration.rb:897:in `block in say_with_time'
+/usr/share/rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.1.3.2) lib/active_record/migration.rb:897:in `say_with_time'
+activerecord (6.1.3.2) lib/active_record/migration.rb:918:in `method_missing'
+db/migrate/20210614103255_drop_comments.rb:3:in `up'
+activerecord (6.1.3.2) lib/active_record/migration.rb:870:in `public_send'
+activerecord (6.1.3.2) lib/active_record/migration.rb:870:in `exec_migration'
+activerecord (6.1.3.2) lib/active_record/migration.rb:851:in `block (2 levels) in migrate'
+/usr/share/rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+activerecord (6.1.3.2) lib/active_record/migration.rb:850:in `block in migrate'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:462:in `with_connection'
+activerecord (6.1.3.2) lib/active_record/migration.rb:849:in `migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1037:in `migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1329:in `block in execute_migration_in_transaction'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1380:in `block in ddl_transaction'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `block in transaction'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/transaction.rb:310:in `block in within_new_transaction'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.3.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/transaction.rb:308:in `within_new_transaction'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `transaction'
+activerecord (6.1.3.2) lib/active_record/transactions.rb:209:in `transaction'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1380:in `ddl_transaction'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1328:in `execute_migration_in_transaction'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1302:in `each'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1302:in `migrate_without_lock'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1251:in `block in migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1401:in `block in with_advisory_lock'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1416:in `block in with_advisory_lock_connection'
+activerecord (6.1.3.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:462:in `with_connection'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1416:in `with_advisory_lock_connection'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1397:in `with_advisory_lock'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1251:in `migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1086:in `up'
+activerecord (6.1.3.2) lib/active_record/migration.rb:1061:in `migrate'
+activerecord (6.1.3.2) lib/active_record/tasks/database_tasks.rb:237:in `migrate'
+activerecord (6.1.3.2) lib/active_record/migration.rb:137:in `block in <class:PendingMigrationError>'
+activesupport (6.1.3.2) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+webpacker (5.4.0) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:07:33 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 3.0ms | Allocations: 3984)
+  Rendered layout layouts/main.html.erb (Duration: 4.6ms | Allocations: 5169)
+Completed 200 OK in 13ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 8072)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:08:47 +0300
+Processing by HomeController#private as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/private.html.haml within layouts/main
+  Rendered home/private.html.haml within layouts/main (Duration: 2.2ms | Allocations: 1590)
+  Rendered layout layouts/main.html.erb (Duration: 2.3ms | Allocations: 1674)
+Completed 200 OK in 3ms (Views: 2.8ms | Allocations: 2342)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:08:49 +0300
+Processing by HomeController#private as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/private.html.haml within layouts/main
+  Rendered home/private.html.haml within layouts/main (Duration: 0.1ms | Allocations: 47)
+  Rendered layout layouts/main.html.erb (Duration: 0.2ms | Allocations: 133)
+Completed 200 OK in 1ms (Views: 0.6ms | Allocations: 524)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2021-09-30 15:09:06 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 1.3ms | Allocations: 963)
+  Rendered comments/_form.html.erb (Duration: 8.7ms | Allocations: 6783)
+  Rendered articles/show.html.erb within layouts/application (Duration: 22.4ms | Allocations: 16985)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 78.3ms | Allocations: 44918)
+Completed 200 OK in 87ms (Views: 78.4ms | ActiveRecord: 1.3ms | Allocations: 52945)
+
+
+Started GET "/articles" for 127.0.0.1 at 2021-09-30 15:09:12 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 7.7ms | Allocations: 5094)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 5619)
+
+
+Started GET "/articles" for 127.0.0.1 at 2021-09-30 15:10:22 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:35
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 5678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 8.3ms | Allocations: 9234)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.7ms | Allocations: 10924)
+
+
+Started GET "/articles" for 127.0.0.1 at 2021-09-30 15:10:24 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1259)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 3.8ms | Allocations: 4691)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5094)
+
+
+Started GET "/articles" for 127.0.0.1 at 2021-09-30 15:10:25 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1267)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 3.7ms | Allocations: 4700)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5106)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:10:38 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:09 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:10 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:10 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:11 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:11 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:11 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:12 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:12 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:11:31 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:12:25 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:35
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 6312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 23.2ms | Allocations: 17639)
+Completed 200 OK in 34ms (Views: 24.2ms | ActiveRecord: 0.9ms | Allocations: 21402)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:12:48 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 5.8ms | Allocations: 1617)
+  Rendered layout layouts/main.html.erb (Duration: 6.0ms | Allocations: 1771)
+Completed 200 OK in 7ms (Views: 6.6ms | Allocations: 2561)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:12:51 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 0.1ms | Allocations: 47)
+  Rendered layout layouts/main.html.erb (Duration: 0.2ms | Allocations: 133)
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 524)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2021-09-30 15:13:10 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 0.1ms | Allocations: 47)
+  Rendered layout layouts/main.html.erb (Duration: 0.2ms | Allocations: 132)
+Completed 200 OK in 1ms (Views: 0.5ms | Allocations: 519)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2021-09-30 15:13:24 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 0.8ms | Allocations: 1630)
+  Rendered layout layouts/main.html.erb (Duration: 1.0ms | Allocations: 1779)
+Completed 200 OK in 2ms (Views: 1.5ms | Allocations: 2649)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2021-09-30 15:13:25 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 0.2ms | Allocations: 47)
+  Rendered layout layouts/main.html.erb (Duration: 0.4ms | Allocations: 132)
+Completed 200 OK in 2ms (Views: 1.0ms | Allocations: 520)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2021-09-30 15:13:25 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 0.1ms | Allocations: 47)
+  Rendered layout layouts/main.html.erb (Duration: 0.2ms | Allocations: 132)
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 519)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2021-09-30 15:13:25 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 0.1ms | Allocations: 47)
+  Rendered layout layouts/main.html.erb (Duration: 0.2ms | Allocations: 132)
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 519)
+
+
+Started GET "/articles" for 127.0.0.1 at 2021-09-30 15:17:58 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:35
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 6034)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 13.8ms | Allocations: 12432)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.8ms | Allocations: 14619)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:38:28 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/main.html.erb
+  Rendering home/index.html.haml within layouts/main
+  Rendered home/index.html.haml within layouts/main (Duration: 1.9ms | Allocations: 3477)
+  Rendered layout layouts/main.html.erb (Duration: 2.4ms | Allocations: 3859)
+Completed 200 OK in 12ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 7302)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-30 15:38:48 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:35
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 6333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 27.3ms | Allocations: 16195)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 0.9ms | Allocations: 18950)
+
+
+Started GET "/" for 127.0.0.1 at 2021-10-05 13:57:34 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 6317)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 29.6ms | Allocations: 20189)
+Completed 200 OK in 41ms (Views: 30.1ms | ActiveRecord: 0.5ms | Allocations: 24623)
+
+
+Started GET "/" for 127.0.0.1 at 2021-10-05 14:13:44 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 5688)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 28.4ms | Allocations: 19222)
+Completed 200 OK in 41ms (Views: 29.3ms | ActiveRecord: 0.5ms | Allocations: 23944)
+
+
+Started GET "/" for 127.0.0.1 at 2021-10-05 14:14:02 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1278)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 12.0ms | Allocations: 4712)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.1ms | Allocations: 5126)
+
+
+Started GET "/search?query=&commit=Search" for 127.0.0.1 at 2021-10-05 14:14:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/search"):
+  
+Started GET "/" for 127.0.0.1 at 2021-10-05 14:14:30 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1369)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 14.1ms | Allocations: 4939)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.1ms | Allocations: 5432)
+
+
+Started GET "/articles/3/edit" for 127.0.0.1 at 2021-10-05 14:14:34 +0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 11.6ms | Allocations: 5753)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 12.5ms | Allocations: 6114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 17.8ms | Allocations: 9446)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.1ms | Allocations: 11037)
+
+
+Started GET "/" for 127.0.0.1 at 2021-10-05 15:54:42 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:35
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 5826)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 21.7ms | Allocations: 19413)
+Completed 200 OK in 32ms (Views: 22.5ms | ActiveRecord: 0.4ms | Allocations: 25570)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2021-10-05 15:55:19 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/views/articles/show.html.erb:17
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 1.3ms | Allocations: 909)
+  Rendered comments/_form.html.erb (Duration: 7.5ms | Allocations: 5616)
+  Rendered articles/show.html.erb within layouts/application (Duration: 23.4ms | Allocations: 15729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 27.7ms | Allocations: 19062)
+Completed 200 OK in 38ms (Views: 27.3ms | ActiveRecord: 0.8ms | Allocations: 22805)
+
+
+Started GET "/articles/5/edit" for 127.0.0.1 at 2021-10-05 15:55:31 +0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.haml
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.8ms | Allocations: 1221)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1684)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 6.1ms | Allocations: 5120)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 6946)
+
+
