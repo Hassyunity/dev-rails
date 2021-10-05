@@ -87,6 +87,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
+    erb2haml (0.1.5)
+      html2haml
     erubi (1.10.0)
     erubis (2.7.0)
     ffi (1.15.1)
@@ -116,6 +118,10 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 5.1)
+    hamlit (2.15.1)
+      temple (>= 0.8.2)
+      thor
+      tilt
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -283,9 +289,11 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  erb2haml
   guard-rspec
-  haml (~> 5.1.2)
-  haml-rails (~> 2.0.1)
+  haml
+  haml-rails
+  hamlit
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
