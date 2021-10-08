@@ -1,0 +1,11 @@
+= form_with model: [ @article, @article.comments.build ] do |form|
+  %p
+    = form.label :Your_name
+    %br/
+    = form.text_field :commenter
+  %p
+    = form.label :Your_comment
+    %br/
+    = form.text_area :body
+  %p
+    = image_submit_tag ''

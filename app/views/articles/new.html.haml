@@ -1,0 +1,22 @@
+-# <center><h1>New Article</h1>
+
+
+-# <%= render "form", article: @article %>
+ 
+-# <html>________________________________________________________________________________________________________________________________________________________________<br>
+%br 
+%h1
+test the extension haml
+#sidebar
+  %ul.main
+    %li.active
+      %a{"href" => "../articles"}
+        Accueil
+    %li
+      %a{"href" => "new"}
+        Nouvelles 
+    %li.active
+      %a{"href" => "new"}
+      Articles
+  %h1 new article
+= render "form", article: @article
